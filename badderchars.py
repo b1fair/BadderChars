@@ -31,10 +31,9 @@ for onechar in badchars:
         testchars=testchars.replace(onechar,"")
  
 print "testchars is %s bytes" % len(testchars)
- 
-crash = testchars + "B" * (3000-len(testchars)) + "\r\n"
 
-# Customize the below construct to suit your scenario
+# Customize the below constructs to suit your scenario
+crash = testchars + "B" * (3000-len(testchars)) + "\r\n"
 buffer = "URCOMMAND " + crash
  
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
